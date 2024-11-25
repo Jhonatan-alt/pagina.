@@ -72,7 +72,6 @@
             $sql->execute();
             return $resultado=$sql->fetchAll();
     }
-
     public function usuarios_x_id($usu_id){ 
         $conectar=parent::Conexion();
         parent::set_names();
@@ -83,6 +82,25 @@
         return $resultado=$sql->fetchAll(); 
     }  
     
+    public function verificar_email($email) {
+        $conectar = parent::Conexion();
+        parent::set_names();
+        $sql = "SELECT * FROM usuarios WHERE usu_correo = ?";
+        $stmt = $conectar->prepare($sql);
+        $stmt->bindValue(1, $email);
+        $stmt->execute();
+        return $stmt->rowCount() > 0; // Devuelve true si existe el correo, false de lo contrario
+    }
+    public function guardar_token($email, $token) {
+        $conectar = parent::Conexion();
+        parent::set_names();
+        $sql = "UPDATE usuarios SET token = ? WHERE usu_correo = ?";
+        $stmt = $conectar->prepare($sql);
+        $stmt->bindValue(1, $token);
+        $stmt->bindValue(2, $email);
+        $stmt->execute();
+        return $stmt->rowCount(); // Devuelve el número de filas afectadas
+    }
     public function update_usuarios_perfil($usu_id,$nombre,$ape_paterno,$ape_materno,$usu_pass,$sexo,$telefono){
         $conectar=parent::conexion();
         parent::set_names();

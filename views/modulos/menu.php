@@ -7,7 +7,7 @@
             class="brand-image img-circle elevation-3"
             style="opacity: 0.8"
           />
-          <span class="brand-text font-weight-light">Uniminuto</span>
+          <span class="brand-text font-weight-light"></span>
         </a>
 
         <!-- Sidebar -->
@@ -16,7 +16,7 @@
           <div class="user-panel mt-3 pb-3 mb-3 d-flex">
             <div class="image">
               <img
-                src="../public/dist/img/perfil.jpg"
+                src="../HTML/dist/yo.png"
                 class="img-circle elevation-2"
                 alt="User Image"
               />
@@ -79,17 +79,20 @@
                        
                       ?>
 
-                </p>
-                </a>
-              </li>
-
               <?php
                        }else{
 
                         
                       ?>
 
-
+              <li class="nav-item">
+                <a href="../views/socialMedia.php" class="nav-link">
+                  <i class="nav-icon fas fa-book"></i>
+                  <p>
+                    SOCIAL MEDIA
+                </p>
+                </a>
+              </li>
               <li class="nav-item">
                 <a href="../views/usuario.php" class="nav-link">
                   <i class="nav-icon fas fa-users"></i>
@@ -98,7 +101,22 @@
                 </p>
                 </a>
               </li>
-              
+              <li class="nav-item">
+                <a href="../views/estudios.php" class="nav-link">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>
+                    ESTUDIOS
+                </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="../views/experiencia.php" class="nav-link">
+                  <i class="nav-icon fas fa-users"></i>
+                  <p>
+                    EXPERIENCIA
+                </p>
+                </a>
+              </li>
               <?php } 
                       ?>
 

@@ -34,7 +34,7 @@ if(isset($_SESSION["usu_id"])){
     <section class="content-header">
       <div class="card card-info">
             <div class="card-header">
-            <h1 class="card-title">USUARIO</h1>
+            <h1 class="card-title">ESTUDIOS</h1>
                 <ol class="breadcrumb float-sm-right">
                   <li class="breadcrumb-item"><a href="inicio.php">INICIO</a></li>
                   <li class="breadcrumb-item active"><a href="usuario.php">Procesos</a></li>
@@ -47,15 +47,12 @@ if(isset($_SESSION["usu_id"])){
          <table id="usuario_data" class="table display responsive nowrap">
             <thead>
               <tr>
-                <th class="wd-15p">Nombre usuario</th>
-                <th class="wd-15p">Apellido paterno</th>
-                <th class="wd-15p">Apellido materno</th>
-                <th class="wd-15p">Correo</th>
-                <th class="wd-15p">Contraseña</th>
-                <th class="wd-15p">Sexo</th>
-                <th class="wd-15p">Telefono</th>            
-                <th></th>
-                <th></th>
+                <th>Institución</th>
+                <th>Título</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Fin</th>
+                <th>Estado</th>
+                <th>Acciones</th>
               </tr>
             </thead>
           </table>
@@ -81,7 +78,7 @@ if(isset($_SESSION["usu_id"])){
 
 <!-- jQuery -->
    <?php
-     require_once("../modelos/usuarioModal.php");
+     require_once("../modelos/estudios.php");
       include('modulos/js.php');
     ?>
     <script type="text/javascript" src="js/usuarios.js"></script>
@@ -93,7 +90,4 @@ if(isset($_SESSION["usu_id"])){
   header("Location:".Conectar::ruta()."views/404.php");
 }
 
-?>
-<?php
 
-?>

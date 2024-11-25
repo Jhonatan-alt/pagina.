@@ -10,7 +10,7 @@
         protected function Conexion(){
             try {
                 //TODO: Cadena de Conexion QA/
-				$conectar = $this->dbh = new PDO("mysql:local=localhost;dbname=proyecto","root","");
+				$conectar = $this->dbh = new PDO("mysql:host=localhost;dbname=proyecto","root","");
                 //TODO: Cadena de Conexion Produccion/
 				return $conectar;
 			} catch (Exception $e) {

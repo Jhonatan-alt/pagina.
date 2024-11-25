@@ -9,30 +9,6 @@
     /*TODO: Opcion de solicitud de controller */
     switch($_GET["opc"]){
 
-        /*TODO: MicroServicio para poder mostrar el listado de cursos de un usuario con certificado */
-        case "listar_cursos": /*get_cursos_x_usuario es el nombre de la clase creada en el modelo*/
-            $datos=$usuario->cursos_x_usuarios($_POST["usu_id"]);
-            $data= Array();
-            foreach($datos as $row){
-                $sub_array = array();
-                /*columnas de la tabla de la bd a mostrar*/
-                $sub_array[] = $row["curso"];
-                $sub_array[] = $row["fecha_ini"];
-                $sub_array[] = $row["fecha_fin"];
-                $sub_array[] = $row["nombrei"]." ".$row["ape_paternoi"]; 
-                $sub_array[] = '<button type="button" onClick="certificado('.$row["curusu_id"].');" id="'. $row["curusu_id"].'" class="btn btn-outline-primary">Certificado</button>';                
-                $data[] = $sub_array;
-            }
-            /*Formato del datatable, se usa siempre*/
-            $results = array(
-                "sEcho"=>1,
-                "iTotalRecords"=>count($data),
-                "iTotalDisplayRecords"=>count($data),
-                "aaData"=>$data);
-            echo json_encode($results);
-
-            break;
-
             case "mostrar":
                 $datos = $usuario->usuarios_x_id($_POST["usu_id"]);
                 if(is_array($datos)==true and count($datos)<>0){

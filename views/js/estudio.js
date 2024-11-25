@@ -11,7 +11,7 @@ function guardaryeditar(e) {
   var formData = new FormData($("#usuario_form")[0]);
   console.log(formData);
   $.ajax({
-    url: "/Proyecto/controller/usuario.php?opc=guardaryeditar",
+    url: "/Proyecto/controller/estudios.php?opc=guardaryeditar",
     type: "POST",
     data: formData,
     contentType: false,
@@ -39,7 +39,7 @@ $(document).ready(function () {
     aServerSide: true,
     dom: "Bfrtip",
     ajax: {
-      url: "/Proyecto/controller/usuario.php?opc=listar",
+      url: "/Proyecto/controller/estudios.php?opc=listar",
       type: "post",
       data: { usu_id: usu_id},
     },
@@ -85,7 +85,7 @@ function nuevo() {
 }
 
 function editar(usu_id) {
-  $.post("/Proyecto/controller/usuario.php?opc=Mostrar",
+  $.post("/Proyecto/controller/estudios.php?opc=Mostrar",
     { usu_id: usu_id },
     function (data) {
       data = JSON.parse(data);
@@ -116,7 +116,7 @@ function eliminar(usu_id) {
   }).then((result) => {
     if (result.value) {
       $.post(
-        "/Proyecto/controller/usuario.php?opc=eliminar",
+        "/Proyecto/controller/estudios.php?opc=eliminar",
         { usu_id: usu_id },
         function (data) {
           $("#usuario_data").DataTable().ajax.reload();
